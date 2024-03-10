@@ -13,7 +13,7 @@ class DynamicMatrixPlot(MatrixPlot):
         self.output = widgets.Output()
 
     def compute_stats(self, marker_genes_dict, pbmc):
-        # Calcul des moyennes d'expression des gènes marqueurs
+        # Calculation of mean expressions of gene markers
         mean_expressions = []
         for group, genes in marker_genes_dict.items():
             expression_data = sc.get.obs_df(pbmc, keys=genes + ['clusters'])
@@ -23,7 +23,7 @@ class DynamicMatrixPlot(MatrixPlot):
 
         self.mean_expression_df = pd.concat(mean_expressions, axis=1)
 
-        # Calcul des statistiques supplémentaires
+        # Calculation of statistics
         stats_expressions = []
         for group, genes in marker_genes_dict.items():
             expression_data = sc.get.obs_df(pbmc, keys=genes + ['clusters'])
@@ -33,7 +33,7 @@ class DynamicMatrixPlot(MatrixPlot):
 
         self.stats_expression_df = pd.concat(stats_expressions, axis=1)
 
-        # Préparation des tooltips pour chaque cellule
+        # Preparation of tooltips for each cell
         tooltip_texts = self.mean_expression_df.copy()
         for col in self.mean_expression_df.columns:
             group, gene = col.split('_')[0], col.split('_')[-1]
