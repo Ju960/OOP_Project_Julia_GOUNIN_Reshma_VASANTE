@@ -13,7 +13,7 @@ class DynamicMatrixPlot(MatrixPlot):
         self.output = widgets.Output()
 
     def compute_stats(self, marker_genes_dict, pbmc):
-        # Calculation of mean expressions of gene markers
+        # Calculation of mean of expressions of marker genes
         mean_expressions = []
         for group, genes in marker_genes_dict.items():
             expression_data = sc.get.obs_df(pbmc, keys=genes + ['clusters'])
@@ -23,7 +23,7 @@ class DynamicMatrixPlot(MatrixPlot):
 
         self.mean_expression_df = pd.concat(mean_expressions, axis=1)
 
-        # Calculation of statistics
+        # Calculation of statistics 
         stats_expressions = []
         for group, genes in marker_genes_dict.items():
             expression_data = sc.get.obs_df(pbmc, keys=genes + ['clusters'])
@@ -54,17 +54,23 @@ class DynamicMatrixPlot(MatrixPlot):
 
     def display_widgets(self, marker_genes_dict):
         self.group_selector = widgets.SelectMultiple(options=list(marker_genes_dict.keys()), description='Groups:', rows=10)
+        self.color_map_widget = widgets.Dropdown(
+            options=['magma', 'viridis', 'plasma', 'inferno', 'cividis', 'Blues'],
+            value='magma',
+            description='Color Map:'
+        )
         display_button = widgets.Button(description='Update Graph')
         display_button.on_click(self.update_plot)
-        display(widgets.VBox([widgets.HBox([self.group_selector, display_button]), self.output]))
+        display(widgets.VBox([self.group_selector, self.color_map_widget, display_button, self.output]))
 
     def update_plot(self, button):
         selected_groups = self.group_selector.value
-        self.plot_with_plotly(selected_groups)
+        selected_color_map = self.color_map_widget.value
+        self.plot_with_plotly(selected_groups, color_map=selected_color_map)
 
-    def plot_with_plotly(self, selected_groups):
+    def plot_with_plotly(self, selected_groups, color_map='magma'):
         with self.output:
-            self.output.clear_output(wait=True)  # Efface l'ancienne sortie
+            self.output.clear_output(wait=True) 
             if 'All' in selected_groups or len(selected_groups) == 0:
                 filtered_df = self.mean_expression_df
                 filtered_tooltips = self.tooltip_texts
@@ -79,7 +85,7 @@ class DynamicMatrixPlot(MatrixPlot):
                 y=filtered_df.index,
                 text=filtered_tooltips.values,
                 hoverongaps=False,
-                colorscale='magma'))
+                colorscale= color_map))
 
             fig.update_traces(hoverinfo='text')
             fig.update_layout(
