@@ -17,7 +17,11 @@ Then, run the file "_dynamicMatrixPlot.py" in a terminal.
 Open a notebook, and write these lines :
 
 ///
+from _matrixPlot_widget import InteractiveMatrixPlot
+warnings.filterwarnings('ignore')
 
+ip = InteractiveMatrixPlot(pbmc, gene_list)
+ip.display_widgets()
 ///
 
 pbmc, gene_list and marker_genes_dict are to defined beforehand.
