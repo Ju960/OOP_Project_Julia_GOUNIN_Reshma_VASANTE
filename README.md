@@ -20,7 +20,17 @@ To install this version of Scanpy package, there are several steps :
 3) Read the various read_me files for each enhancement to better understand how they work
 
 #### Usage
-After the installation, you can use this version of scanpy package in Python environment. 
+After the installation, you can use this version of scanpy package in Python environment. Before running the programs, remember to install the various packages used, such as scanpy.  
+         ```pip instal  ```
+
+In the folder, we will find 3 files :  
+1. a file that uses widgets
+2. a file that uses Plotly
+3. a file that uses Bokeh
+
+Each .py file contains the various functions for the enhancements and the notebook will allow you to test your files.
+
+#### Data used
 ___
 ### Authors
 **Students of M1 GENIOMHE**  
