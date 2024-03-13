@@ -11,7 +11,7 @@ ___
 #### Installation
 To install this version of Scanpy package, there are several steps :
 
-1) Clone the repository to the local machine
+1) Clone the repository to the local machine  
          git clone https://github.com/Ju960/OOP_Project_Julia_GOUNIN_Reshma_VASANTE.git
 
 ___
