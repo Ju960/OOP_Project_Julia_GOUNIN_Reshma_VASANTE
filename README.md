@@ -9,6 +9,10 @@ Scanpy is an open-source Python library specifically designed for the analysis o
 ___
 ### Setup
 #### Installation
+To install this version of Scanpy package, there are several steps :
+
+1) Clone the repository to the local machine
+         
 
 ___
 ### Authors
