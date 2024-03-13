@@ -1,1 +1,23 @@
 READ ME DYNAMICMATRIXPLOT
+
+The goal of this file is to show a dynamic matrix with the package plotly and widget.
+
+We are chosen to use the package plotly to displate a dynamic matrix, taking clusters and genes as parameters.
+When the mouse is on one pixel, it's show the name of the gene, the mean level of the expression of the gene, the median level expression of the gene and the standart leviation level of expression.
+The user can define the markers genes of our interests.
+The expression level will be define by the user on the interface graphic.
+
+
+How to use the file _dynamicMatrixPlot.py ?
+
+First, download the file in the folder which contain the part plotting of the package scanpy.
+In our case, it's can be the folder "plotting".
+Then, run the file "_dynamicMatrixPlot.py" in a terminal.
+Open a notebook, and write these lines :
+
+///
+
+///
+
+
+Please go to the README to see how to integrate the desired dataset.
