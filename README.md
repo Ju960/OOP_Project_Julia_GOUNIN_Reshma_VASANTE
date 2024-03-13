@@ -31,6 +31,14 @@ In the folder, we will find 3 files :
 Each .py file contains the various functions for the enhancements and the notebook will allow you to test your files.
 
 #### Data used
+In the notebook, you will find all the necessary data to construct the matrix plots :  
+- Dataset pmbc
+- List of genes of interest
+- Clusters
+- Marker genes
+
+This dataset (gene_list and marker_gene) can be modified according to your needs and research requirements.
+
 ___
 ### Authors
 **Students of M1 GENIOMHE**  
