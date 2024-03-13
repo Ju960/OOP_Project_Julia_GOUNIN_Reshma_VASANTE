@@ -16,8 +16,13 @@ Then, run the file "_dynamicMatrixPlot.py" in a terminal.
 Open a notebook, and write these lines :
 
 ///
+from _dynamicMatrixPlot import DynamicMatrixPlot
+warnings.filterwarnings('ignore')
 
+dynamic_plot = DynamicMatrixPlot(pbmc, gene_list, 'cell type') 
+dynamic_plot.compute_stats(marker_genes_dict, pbmc)
+dynamic_plot.display_widgets(marker_genes_dict)
 ///
 
-
+pbmc, gene_list and marker_genes_dict are to defined beforehand.
 Please go to the README to see how to integrate the desired dataset.
