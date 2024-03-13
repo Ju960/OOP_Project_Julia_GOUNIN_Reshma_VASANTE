@@ -9,5 +9,24 @@ The expression level will be define by a color scale which can be redefine in th
 
 How to use the file _bokehMatrixPlot.py ?
 
-First, run the file in a an terminal.
-Then, 
+First, download the file in the folder which contain the part plotting of the package scanpy.
+In our case, it's can be the folder "plotting".
+Then, run the file "_bokehMatrixPlot.py" in a terminal.
+Open a notebook, and write these lines :
+
+///
+from _bokehMatrixPlot import BokehMatrixPlot  // import the function from our file
+warnings.filterwarnings('ignore')
+
+# Creation of a gene name list from the marker_genes_dict dictionary
+gene_list = []                                 // gene_list is to define beforehand
+for genes in marker_genes_dict.values():
+    gene_list.extend(genes)
+
+# Creation of the BokehMatrixPlot instance with the gene list
+bmk_plot = BokehMatrixPlot(pbmc, gene_list, 'cell type') // pbmc is to define beforehand
+bmk_plot.to_bokeh()
+///
+
+
+Please go to the README to see how to integrate the desired dataset.
