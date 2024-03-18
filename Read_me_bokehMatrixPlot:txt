@@ -3,7 +3,7 @@ READ ME FOR BOKEHMATRIXPLOT
 The goal of this file is to show a dynamic matrix with the package bokeh.
 
 We are chosen to use the package bokeh to displate a dynamic matrix, taking genes and clusters as parameters.
-When the mouse is on one pixel, it's show the number of the cluster, the name of the gene, the mean level of the expression of the gene, the minimum level expression of the gene and the maximum level of expression.
+When the mouse is over one pixel which contains one gene for one cluster, it's show the number of the cluster, the name of the gene, the mean level of the expression of the gene, the minimum level expression of the gene and the maximum level of expression.
 The expression level will be define by a color scale which can be redefine in the code of _bokehMatrixPlot.py.
 
 
@@ -12,7 +12,7 @@ How to use the file _bokehMatrixPlot.py ?
 First, download the file in the folder which contain the part plotting of the package scanpy.
 In our case, it's can be the folder "plotting".
 Then, run the file "_bokehMatrixPlot.py" in a terminal.
-Open a notebook, and write these lines :
+Open a notebook in our folder, and write these lines :
 
 ///
 from _bokehMatrixPlot import BokehMatrixPlot  // import the function from our file
