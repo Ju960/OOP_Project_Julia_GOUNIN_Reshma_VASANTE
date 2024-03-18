@@ -39,6 +39,42 @@ In the notebook, you will find all the necessary data to construct the matrix pl
 
 This dataset (gene_list and marker_gene) can be modified according to your needs and research requirements.
 
+This our version of our dataset : 
+
+```#Dataset
+pbmc = sc.datasets.pbmc68k_reduced()
+
+#List of genes of interest
+gene_list = ['CD79A', 'MS4A1', 'FCER1A', 'CST3', 'FCGR3A', 'GNLY', 'NKG7', 'IGLL1', 'IGJ', 'CD3D']
+
+#Calculation of clusters
+sc.tl.leiden(pbmc, key_added='clusters', resolution=0.5)
+
+#Mapping clusters to cell annotations
+cluster2annotation = {
+    '0': 'Monocytes',
+     '1': 'Dendritic',
+     '2': 'T-cell',
+     '3': 'NK',
+     '4': 'B-cell',
+     '5': 'Dendritic',
+     '6': 'Plasma',
+     '7': 'Other',
+     '8': 'Dendritic',
+}
+pbmc.obs['cell type'] = pbmc.obs['clusters'].map(cluster2annotation).astype('category')
+
+#Marker gene set
+marker_genes_dict = {
+    'B-cell': ['CD79A', 'MS4A1'],
+    'Dendritic': ['FCER1A', 'CST3'],
+    'Monocytes': ['FCGR3A'],
+    'NK': ['GNLY', 'NKG7'],
+    'Other': ['IGLL1'],
+    'Plasma': ['IGJ'],
+    'T-cell': ['CD3D'],
+}
+```
 ___
 ### Authors
 **Students of M1 GENIOMHE**  
