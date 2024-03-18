@@ -14,7 +14,7 @@ How to use the file _matrixPlot_widge.py ?
 First, download the file in the folder which contain the part plotting of the package scanpy.
 In our case, it's can be the folder "plotting".
 Then, run the file "_dynamicMatrixPlot.py" in a terminal.
-Open a notebook, and write these lines :
+Open a notebook in our folder, and write these lines :
 
 ///
 from _matrixPlot_widget import InteractiveMatrixPlot
