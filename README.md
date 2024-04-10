@@ -29,6 +29,7 @@ In the folder, we will find 3 files :
 3. a file that uses Bokeh
 
 Each .py file contains the various functions for the enhancements and the notebook will allow you to test your files.
+The notebook must be on the same folder as the 3 files.
 
 #### Data used
 In the notebook, you will find all the necessary data to construct the matrix plots :  
