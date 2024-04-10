@@ -1,6 +1,6 @@
 # pip install scanpy
 # pip install igraph
-# pip install leiden
+# pip install leidenalg
 import scanpy as sc
 import ipywidgets as widgets
 from IPython.display import display
